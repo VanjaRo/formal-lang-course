@@ -5,6 +5,7 @@ from project.nfa import graph_to_nfa
 from networkx import MultiDiGraph
 from cfpq_data import labeled_two_cycles_graph
 
+
 # dfa
 def test_empty_regex():
     dfa = regex_to_dfa("")
