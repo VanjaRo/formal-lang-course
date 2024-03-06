@@ -5,6 +5,7 @@ from project.nfa import graph_to_nfa
 from project.dfa import regex_to_dfa
 from project.finite_automaton import FiniteAutomaton, intersect_automata
 
+
 # haven't found NodeView in networkx
 def paths_ends(
     graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int], regex: str
