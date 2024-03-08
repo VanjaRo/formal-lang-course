@@ -1,12 +1,11 @@
 from networkx import MultiDiGraph
-from pyformlang.regular_expression import Regex
+from networkx.classes.reportviews import NodeView
 
 from project.nfa import graph_to_nfa
 from project.dfa import regex_to_dfa
 from project.finite_automaton import FiniteAutomaton, intersect_automata
 
 
-# haven't found NodeView in networkx
 def paths_ends(
     graph: MultiDiGraph, start_nodes: set[int], final_nodes: set[int], regex: str
 ) -> list[tuple[NodeView, NodeView]]:
@@ -31,8 +30,8 @@ def paths_ends(
         if first_state in start_states and second_state in final_states:
             result.add(
                 (
-                    first_state // bin_matrix_for_query.number_of_states,
-                    second_state // bin_matrix_for_query.number_of_states,
+                    first_state // bin_matrix_for_query.states_count,
+                    second_state // bin_matrix_for_query.states_count,
                 )
             )
 
